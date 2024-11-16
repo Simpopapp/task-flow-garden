@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { CalendarCheck, ChartBar, Bell, Crown } from "lucide-react";
 import { PremiumButton } from "@/components/premium/PremiumButton";
 import { Card } from "@/components/ui/card";
