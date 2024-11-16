@@ -1,15 +1,19 @@
 import { create } from "zustand";
-import { Task } from "@/utils/types";
+import { Task, TaskFilters } from "@/utils/types";
 
 interface TaskState {
   tasks: Task[];
+  filters: TaskFilters;
   addTask: (task: Omit<Task, "id" | "createdAt">) => void;
   updateTask: (id: string, updates: Partial<Task>) => void;
   deleteTask: (id: string) => void;
+  setFilter: (filters: TaskFilters) => void;
+  clearFilters: () => void;
 }
 
 export const useTaskStore = create<TaskState>((set) => ({
   tasks: [],
+  filters: {},
   addTask: (task) =>
     set((state) => ({
       tasks: [
@@ -31,4 +35,12 @@ export const useTaskStore = create<TaskState>((set) => ({
     set((state) => ({
       tasks: state.tasks.filter((task) => task.id !== id),
     })),
+  setFilter: (newFilters) =>
+    set((state) => ({
+      filters: { ...state.filters, ...newFilters },
+    })),
+  clearFilters: () =>
+    set({
+      filters: {},
+    }),
 }));
