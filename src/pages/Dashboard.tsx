@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "@/store/authStore";
 import { useTaskStore } from "@/store/taskStore";
@@ -6,13 +6,14 @@ import { TaskCard } from "@/components/tasks/TaskCard";
 import { TaskForm } from "@/components/tasks/TaskForm";
 import { Button } from "@/components/ui/button";
 import { TaskStatus, TaskPriority } from "@/utils/types";
-import { useState } from "react";
+import { PremiumSection } from "@/components/premium/PremiumSection";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useAuthStore();
   const { tasks, filters, setFilter, clearFilters, fetchTasks } = useTaskStore();
   const [showTaskForm, setShowTaskForm] = useState(false);
+  const [showPremium, setShowPremium] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -48,7 +49,16 @@ const Dashboard = () => {
       <div className="mb-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold">Dashboard</h1>
-          <Button onClick={() => setShowTaskForm(true)}>Create Task</Button>
+          <div className="space-x-4">
+            <Button onClick={() => setShowTaskForm(true)}>Create Task</Button>
+            <Button
+              onClick={() => setShowPremium(true)}
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 
+                       transform hover:scale-105 transition-all duration-300"
+            >
+              AKALIBRE Premium
+            </Button>
+          </div>
         </div>
 
         {showTaskForm && (
@@ -57,6 +67,22 @@ const Dashboard = () => {
             <TaskForm onClose={() => setShowTaskForm(false)} />
           </div>
         )}
+
+        {showPremium ? (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-y-auto">
+            <div className="min-h-screen flex items-center justify-center p-4">
+              <div className="bg-white rounded-xl max-w-6xl w-full relative">
+                <button
+                  onClick={() => setShowPremium(false)}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                >
+                  ✕
+                </button>
+                <PremiumSection />
+              </div>
+            </div>
+          </div>
+        ) : null}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div className="bg-blue-100 p-4 rounded-lg">
