@@ -7,6 +7,7 @@ import { useAuthStore } from "@/store/authStore";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import PremiumSettings from "./pages/PremiumSettings";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,14 @@ const App = () => (
             element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/premium-settings"
+            element={
+              <PrivateRoute>
+                <PremiumSettings />
               </PrivateRoute>
             }
           />

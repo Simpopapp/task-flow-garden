@@ -1,5 +1,6 @@
 import { useAuthStore } from "@/store/authStore";
 import { Link } from "react-router-dom";
+import { Crown } from "lucide-react";
 
 export const Navbar = () => {
   const { isAuthenticated, logout } = useAuthStore();
@@ -16,6 +17,12 @@ export const Navbar = () => {
               <>
                 <Link to="/tasks" className="nav-link">
                   My Tasks
+                </Link>
+                <Link to="/premium-settings" className="nav-link">
+                  <div className="flex items-center gap-2">
+                    <Crown className="w-4 h-4 text-amber-500" />
+                    <span>Premium</span>
+                  </div>
                 </Link>
                 <button onClick={logout} className="nav-link text-red-500">
                   Logout
