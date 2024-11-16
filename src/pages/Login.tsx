@@ -14,8 +14,10 @@ const Login = () => {
   const login = useAuthStore((state) => state.login);
 
   const handleQuickAccess = () => {
+    // Generate a proper UUID for guest users
+    const guestId = crypto.randomUUID();
     login({
-      id: "guest",
+      id: guestId,
       name: "Guest User",
       email: "guest@example.com",
       role: "employee"
@@ -128,14 +130,14 @@ const mockAuth = async (email: string, password: string) => {
   
   if (email === "admin@example.com" && password === "admin") {
     return {
-      id: "1",
+      id: crypto.randomUUID(),
       name: "Admin User",
       email: "admin@example.com",
       role: "admin" as const,
     };
   } else if (email === "employee@example.com" && password === "employee") {
     return {
-      id: "2",
+      id: crypto.randomUUID(),
       name: "Employee User",
       email: "employee@example.com",
       role: "employee" as const,
