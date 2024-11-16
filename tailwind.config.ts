@@ -33,6 +33,12 @@ export default {
           progress: "#F59E0B",
           completed: "#10B981",
         },
+        premium: {
+          gold: {
+            light: "#FFD700",
+            dark: "#DAA520",
+          },
+        },
       },
       keyframes: {
         "fade-in": {
@@ -42,10 +48,15 @@ export default {
         shimmer: {
           "100%": { transform: "translateX(100%)" },
         },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.3s ease-out",
         shimmer: "shimmer 2s infinite",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       backgroundImage: {
         "premium-gradient": "linear-gradient(135deg, #FFD700, #B8860B)",
