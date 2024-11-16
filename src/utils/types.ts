@@ -19,6 +19,13 @@ export type Task = {
   updated_at: string;
 };
 
+export type TaskFormValues = {
+  title: string;
+  description?: string;
+  status: TaskStatus;
+  priority: TaskPriority;
+};
+
 export type TaskFilters = {
   status?: TaskStatus;
   priority?: TaskPriority;

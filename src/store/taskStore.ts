@@ -14,7 +14,7 @@ interface TaskState {
   fetchTasks: () => Promise<void>;
 }
 
-export const useTaskStore = create<TaskState>((set, get) => ({
+export const useTaskStore = create<TaskState>((set) => ({
   tasks: [],
   filters: {},
   addTask: (task) =>
@@ -52,7 +52,7 @@ export const useTaskStore = create<TaskState>((set, get) => ({
     try {
       const { data, error } = await supabase.from("tasks").select("*");
       if (error) throw error;
-      set({ tasks: data });
+      set({ tasks: data as Task[] });
     } catch (error) {
       toast.error("Failed to fetch tasks");
     }
