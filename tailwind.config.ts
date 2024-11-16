@@ -24,8 +24,26 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        akaflow: {
+          purple: {
+            DEFAULT: "#9b87f5",
+            dark: "#7E69AB",
+            light: "#D6BCFA",
+          },
+          aqua: {
+            DEFAULT: "#7DD3FC",
+            dark: "#0EA5E9",
+            light: "#BAE6FD",
+          },
+          black: "#1A1F2C",
+          gold: {
+            DEFAULT: "#FFD700",
+            dark: "#DAA520",
+            light: "#FFF7CC",
+          },
+        },
         primary: {
-          DEFAULT: "#3B82F6",
+          DEFAULT: "#9b87f5",
           foreground: "#FFFFFF",
         },
         task: {
@@ -39,6 +57,10 @@ export default {
             dark: "#DAA520",
           },
         },
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        logo: ["Poppins", "sans-serif"],
       },
       keyframes: {
         "fade-in": {
