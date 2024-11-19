@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=Cinzel:wght@400;500;600;700&family=MedievalSharp&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,32 +6,72 @@
 
 @layer base {
   :root {
-    --background: 260 40% 98%;
-    --foreground: 222 47% 11%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --background: 34 18% 9%;
+    --foreground: 44 54% 95%;
+    --border: 34 18% 15%;
+    --input: 34 18% 15%;
+    --ring: 44 54% 80%;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-medieval-black text-medieval-gold-light font-medieval;
+    background-image: url('/textures/parchment.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    background-blend-mode: overlay;
   }
 }
 
 @layer components {
-  .task-card {
-    @apply rounded-xl border border-border bg-white p-4 shadow-md transition-all duration-200 hover:shadow-lg;
+  .medieval-button {
+    @apply relative overflow-hidden bg-gradient-to-br from-medieval-metal to-medieval-metal-dark
+           border-2 border-medieval-gold/30 rounded-lg px-6 py-3
+           font-medieval font-bold text-medieval-gold-light shadow-lg
+           transition-all duration-300 hover:scale-105 hover:shadow-medieval-gold/20
+           hover:border-medieval-gold/50 active:scale-95
+           before:absolute before:inset-0 before:bg-gradient-to-r
+           before:from-transparent before:via-white/10 before:to-transparent
+           before:animate-metal-shine;
   }
   
-  .nav-link {
-    @apply rounded-lg p-2 transition-colors hover:bg-gray-100 flex items-center gap-2;
+  .medieval-card {
+    @apply relative overflow-hidden rounded-lg border-2 border-medieval-gold/20
+           bg-gradient-to-br from-medieval-black/90 to-medieval-metal-dark/90
+           p-6 backdrop-blur-sm shadow-xl transition-all duration-300
+           hover:border-medieval-gold/40 hover:shadow-medieval-gold/10;
   }
 
-  .premium-button {
-    @apply relative overflow-hidden rounded-lg border-2 border-premium-gold-dark bg-gradient-to-r from-premium-gold-light to-amber-500 px-8 py-3 font-bold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  .medieval-input {
+    @apply bg-medieval-black/50 border-2 border-medieval-gold/30 rounded-lg
+           px-4 py-2 font-medieval text-medieval-gold-light placeholder-medieval-gold/50
+           focus:border-medieval-gold focus:ring-1 focus:ring-medieval-gold
+           transition-all duration-300;
   }
 
-  .premium-card {
-    @apply rounded-xl border border-premium-gold-dark/30 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl;
+  .medieval-divider {
+    @apply relative h-px bg-medieval-gold/20 my-8
+           before:absolute before:inset-0 before:bg-gradient-to-r
+           before:from-transparent before:via-medieval-gold/40 before:to-transparent;
+  }
+
+  .dragon-icon {
+    @apply absolute -right-2 -top-2 w-16 h-16 text-medieval-gold/20
+           transform rotate-45 animate-float;
+  }
+
+  .status-icon {
+    @apply w-6 h-6;
+  }
+
+  .status-progress {
+    @apply text-medieval-blood animate-flame-pulse;
+  }
+
+  .status-completed {
+    @apply text-medieval-gold;
+  }
+
+  .status-cancelled {
+    @apply text-medieval-metal;
   }
 }
