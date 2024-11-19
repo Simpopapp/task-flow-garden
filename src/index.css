@@ -14,7 +14,8 @@
   }
 
   body {
-    @apply bg-medieval-black text-medieval-gold-light font-medieval;
+    @apply bg-medieval-black text-medieval-gold-light;
+    font-family: 'MedievalSharp', serif;
     background-image: url('/images/textures/parchment.png');
     background-repeat: repeat;
     background-size: 200px;
@@ -26,12 +27,13 @@
   .medieval-button {
     @apply relative overflow-hidden bg-gradient-to-br from-medieval-metal to-medieval-metal-dark
            border-2 border-medieval-gold/30 rounded-lg px-6 py-3
-           font-medieval font-bold text-medieval-gold-light shadow-lg
+           font-bold text-medieval-gold-light shadow-lg
            transition-all duration-300 hover:scale-105 hover:shadow-medieval-gold/20
            hover:border-medieval-gold/50 active:scale-95
            before:absolute before:inset-0 before:bg-gradient-to-r
            before:from-transparent before:via-white/10 before:to-transparent
            before:animate-metal-shine;
+    font-family: 'MedievalSharp', serif;
   }
   
   .medieval-card {
@@ -61,9 +63,10 @@
 
   .medieval-input {
     @apply bg-medieval-black/50 border-2 border-medieval-gold/30 rounded-lg
-           px-4 py-2 font-medieval text-medieval-gold-light placeholder-medieval-gold/50
+           px-4 py-2 text-medieval-gold-light placeholder-medieval-gold/50
            focus:border-medieval-gold focus:ring-1 focus:ring-medieval-gold
            transition-all duration-300;
+    font-family: 'MedievalSharp', serif;
   }
 
   .medieval-divider {

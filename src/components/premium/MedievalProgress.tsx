@@ -16,10 +16,10 @@ export const MedievalProgress = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      <Card className="medieval-card">
+      <Card className="premium-card">
         <div className="flex items-center gap-4 mb-4">
           <Crown className="w-8 h-8 text-medieval-gold animate-float" />
-          <h3 className="text-2xl font-medieval font-bold text-medieval-gold">
+          <h3 className="text-2xl font-bold text-medieval-gold">
             Quest Progress
           </h3>
         </div>
@@ -36,14 +36,14 @@ export const MedievalProgress = () => {
           />
         </div>
         
-        <p className="mt-4 text-medieval-gold-light/80 font-scroll">
+        <p className="mt-4 text-medieval-gold-light/80">
           {completedTasks} of {totalTasks} quests completed
         </p>
       </Card>
 
-      <Card className="medieval-card bg-gradient-to-br from-medieval-black/90 to-medieval-blood/20">
+      <Card className="mystic-card">
         <div className="flex items-center justify-between">
-          <p className="text-xl font-scroll text-medieval-gold">
+          <p className="text-xl text-medieval-gold">
             {motivationalMessages[0]}
           </p>
           <DragonIcon className="w-12 h-12 text-medieval-gold/30 animate-float" />
@@ -51,11 +51,11 @@ export const MedievalProgress = () => {
       </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card className="medieval-card">
+        <Card className="achievement-card">
           <div className="flex items-center gap-4">
             <Sword className="w-8 h-8 text-medieval-metal animate-pulse" />
             <div>
-              <h4 className="font-medieval text-medieval-gold">Battle Stats</h4>
+              <h4 className="text-medieval-gold">Battle Stats</h4>
               <p className="text-2xl font-bold text-medieval-gold-light">
                 Legendary
               </p>
@@ -63,11 +63,11 @@ export const MedievalProgress = () => {
           </div>
         </Card>
 
-        <Card className="medieval-card">
+        <Card className="achievement-card">
           <div className="flex items-center gap-4">
             <Crown className="w-8 h-8 text-medieval-gold animate-float" />
             <div>
-              <h4 className="font-medieval text-medieval-gold">Royal Achievements</h4>
+              <h4 className="text-medieval-gold">Royal Achievements</h4>
               <div className="flex gap-2 mt-2">
                 <TrophyIcon className="w-6 h-6 text-medieval-gold animate-pulse" />
                 <TrophyIcon className="w-6 h-6 text-medieval-gold-dark" />
