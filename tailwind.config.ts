@@ -122,9 +122,9 @@ export default {
       },
       backgroundImage: {
         "premium-gradient": "linear-gradient(135deg, #FFD700, #B8860B)",
-        "parchment": "url('/textures/parchment.png')",
+        "parchment": "url('/images/parchment.png')",
         "metal": "linear-gradient(45deg, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%)",
-        "dragon-scale": "url('/textures/dragon-scale.png')",
+        "dragon-scale": "url('/images/dragon-scale.png')",
       },
     },
   },
