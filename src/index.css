@@ -15,7 +15,7 @@
 
   body {
     @apply bg-medieval-black text-medieval-gold-light font-medieval;
-    background-image: url('/textures/parchment.png');
+    background-image: url('/images/textures/parchment.png');
     background-repeat: repeat;
     background-size: 200px;
     background-blend-mode: overlay;
