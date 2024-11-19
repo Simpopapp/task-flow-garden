@@ -41,6 +41,24 @@
            hover:border-medieval-gold/40 hover:shadow-medieval-gold/10;
   }
 
+  .premium-card {
+    @apply medieval-card bg-texture-dragon bg-cover bg-center bg-no-repeat
+           before:absolute before:inset-0 before:bg-gradient-to-br
+           before:from-medieval-black/80 before:to-medieval-metal-dark/80;
+  }
+
+  .mystic-card {
+    @apply medieval-card bg-texture-crystal bg-cover bg-center bg-no-repeat
+           before:absolute before:inset-0 before:bg-gradient-to-br
+           before:from-medieval-black/70 before:to-medieval-metal-dark/70;
+  }
+
+  .achievement-card {
+    @apply medieval-card bg-texture-coins bg-cover bg-center bg-no-repeat
+           before:absolute before:inset-0 before:bg-gradient-to-br
+           before:from-medieval-black/60 before:to-medieval-gold-dark/60;
+  }
+
   .medieval-input {
     @apply bg-medieval-black/50 border-2 border-medieval-gold/30 rounded-lg
            px-4 py-2 font-medieval text-medieval-gold-light placeholder-medieval-gold/50
