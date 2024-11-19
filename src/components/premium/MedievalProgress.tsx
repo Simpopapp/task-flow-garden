@@ -1,6 +1,7 @@
 import { Progress } from "@/components/ui/progress";
 import { Card } from "@/components/ui/card";
-import { Dragon, Sword, Crown } from "lucide-react";
+import { Sword, Crown } from "lucide-react";
+import { DragonIcon, TrophyIcon } from "@/components/icons";
 
 const motivationalMessages = [
   "Your quest for greatness continues, brave warrior!",
@@ -45,7 +46,7 @@ export const MedievalProgress = () => {
           <p className="text-xl font-scroll text-medieval-gold">
             {motivationalMessages[0]}
           </p>
-          <Dragon className="w-12 h-12 text-medieval-gold/30 animate-float" />
+          <DragonIcon className="w-12 h-12 text-medieval-gold/30 animate-float" />
         </div>
       </Card>
 
@@ -68,9 +69,9 @@ export const MedievalProgress = () => {
             <div>
               <h4 className="font-medieval text-medieval-gold">Royal Achievements</h4>
               <div className="flex gap-2 mt-2">
-                <Trophy className="w-6 h-6 text-medieval-gold animate-pulse" />
-                <Trophy className="w-6 h-6 text-medieval-gold-dark" />
-                <Trophy className="w-6 h-6 text-medieval-metal" />
+                <TrophyIcon className="w-6 h-6 text-medieval-gold animate-pulse" />
+                <TrophyIcon className="w-6 h-6 text-medieval-gold-dark" />
+                <TrophyIcon className="w-6 h-6 text-medieval-metal" />
               </div>
             </div>
           </div>
