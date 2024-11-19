@@ -1,8 +1,9 @@
 import { Task } from "@/utils/types";
 import { cn } from "@/lib/utils";
-import { Shield, Trophy, Skull, Dragon } from "lucide-react";
+import { Shield, Skull } from "lucide-react";
 import { useState } from "react";
 import { TaskForm } from "./TaskForm";
+import { DragonIcon, TrophyIcon } from "@/components/icons";
 
 interface TaskCardProps {
   task: Task;
@@ -16,7 +17,7 @@ export const MedievalTaskCard = ({ task }: TaskCardProps) => {
       case "progress":
         return <Shield className="status-icon status-progress" />;
       case "completed":
-        return <Trophy className="status-icon status-completed" />;
+        return <TrophyIcon className="status-icon status-completed" />;
       case "cancelled":
         return <Skull className="status-icon status-cancelled" />;
       default:
@@ -39,7 +40,7 @@ export const MedievalTaskCard = ({ task }: TaskCardProps) => {
       task.priority === "medium" && "border-medieval-gold/50",
       task.priority === "low" && "border-medieval-metal/50"
     )}>
-      {task.priority === "high" && <Dragon className="dragon-icon" />}
+      {task.priority === "high" && <DragonIcon className="dragon-icon" />}
       
       <div className="flex justify-between items-start">
         <div className="space-y-2">
